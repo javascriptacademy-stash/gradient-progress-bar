@@ -4,8 +4,8 @@ function startProgressBar() {
 
   progress.style.width = "";
 
-  let progressInterval = setInterval(() => {
-    let width = progress.style.width;
+  const progressInterval = setInterval(() => {
+    const width = progress.style.width;
     if (!width) {
       progress.style.width = "1%";
       indicator.innerText = "1%";
@@ -15,6 +15,7 @@ function startProgressBar() {
       clearInterval(progressInterval);
       return;
     }
+
     const numericWidth = parseInt(width.split("%")[0], 0);
     progress.style.width = `${numericWidth + 1}%`;
     indicator.innerText = `${numericWidth + 1}%`;
